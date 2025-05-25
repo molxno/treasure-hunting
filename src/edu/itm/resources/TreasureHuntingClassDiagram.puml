@@ -1,0 +1,30 @@
+
+@startuml
+package edu.itm.codigo.application {
+  class TreasureGame {
+    - filas: int
+    - columnas: int
+    - tesoroFila: int
+    - tesoroColumna: int
+    + TreasureGame(filas: int, columnas: int)
+    - colocarTesoro()
+    + validarCoordenada(fila: int, columna: int): boolean
+    + intentar(fila: int, columna: int): int
+    + getTesoroFila(): int
+    + getTesoroColumna(): int
+  }
+}
+
+package edu.itm.codigo.view {
+  class TreasureGameFX {
+    - game: TreasureGame
+    - botones: Button[][]
+    + start(primaryStage: Stage): void
+    - manejarClick(btn: Button, fila: int, col: int, stage: Stage): void
+    - showAlert(tipo: Alert.AlertType, titulo: String, msg: String): void
+    + main(args: String[]): void
+  }
+}
+
+edu.itm.codigo.view.TreasureGameFX ..> edu.itm.codigo.application.TreasureGame : uses
+@enduml
