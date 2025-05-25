@@ -40,10 +40,9 @@ Este proyecto consiste en el desarrollo de un juego interactivo llamado **"Busca
 
 ```bash
 src/
-├── itm/edu/juego/       # Lógica principal del juego
-├── itm/edu/vista/       # Vista con JavaFX
-├── itm/edu/util/        # Utilidades (validaciones, generación aleatoria, etc.)
-└── itm/edu/recursos/    # Recursos gráficos y diagrama de clases (UML)
+├── itm/edu/codigo/application/       # Lógica principal del juego
+├── itm/edu/codigo/view/              # Vista con JavaFX
+└── itm/edu/resources/                # Recursos gráficos y diagrama de clases (UML)
 ```
 
 🧠 Tecnologías y Herramientas
