@@ -44,6 +44,7 @@ src/
 ├── itm/edu/vista/       # Vista con JavaFX
 ├── itm/edu/util/        # Utilidades (validaciones, generación aleatoria, etc.)
 └── itm/edu/recursos/    # Recursos gráficos y diagrama de clases (UML)
+```
 
 🧠 Tecnologías y Herramientas
 -----------------------------
