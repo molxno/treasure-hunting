@@ -1,6 +1,7 @@
 package edu.itm.codigo.view;
 
 import edu.itm.codigo.application.TreasureGame;
+import java.util.NoSuchElementException;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -20,9 +21,14 @@ public class TreasureGameFX extends Application {
         sizeDialog.setContentText("Ingrese tamaño del tablero (número de filas = columnas):");
         int n;
         try {
-            n = Integer.parseInt(sizeDialog.showAndWait().orElseThrow());
-        } catch (NumberFormatException e) {
-            showAlert(Alert.AlertType.ERROR, "Entrada inválida", "Debe ingresar un número entero mayor que cero.");
+            String input = sizeDialog.showAndWait().orElseThrow();
+            n = Integer.parseInt(input);
+            if (n <= 0) {
+                showAlert(Alert.AlertType.ERROR, "Entrada inválida", "Debe ingresar un número entero **mayor que cero**.");
+                return;
+            }
+        } catch (NumberFormatException | NoSuchElementException e) {
+            showAlert(Alert.AlertType.ERROR, "Entrada inválida", "Debe ingresar un número entero **mayor que cero**.");
             return;
         }
 
